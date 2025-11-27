@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bright Coffee</title>
+
+  <link href="bootstrap.css" rel="stylesheet">
+ 
+
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+.hero {
+   background: url('image/Background.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 80px 0;
+  color: #fff;
+  text-align: left;
+}
+.btn-white {
+  background: white;
+  color: #000;
+  border: 1px solid #ccc;
+}
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+.menu-price {
+  font-weight: bold;
+}
+footer {
+  background: #222;
+  color: #ccc;
+  padding: 20px 0;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="image/logo.jpg" alt="logo" width="60" height="60" class="rounded-circle">
+        <div>
+          <div class="fw-bold brand-color">Bright Coffee</div>
+          <small class="text-muted">Coffee & Pastry</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header id="home" class="hero py-6 text-white">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          
+            <h1 class="display-5 brand-color text-center">Wake up with a smile Bright Coffee</h1>
+            <p class="lead text-center">Handcrafted coffees, freshly baked pastries, and a cozy place to slow down. Special single-origin brews every week.</p>
+            <p align="center">
+              <a href="#menu" class="btn btn-lg btn-primary me-2 " >See Menu</a>
+              <a href="#contact" class="btn btn-lg btn-white">Visit Us</a>
+            </p>
+          
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <img class="img-fluid rounded-4 shadow" src="image/coffee-cup.jpg" alt="coffee cup">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <div class="card border-0 h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title brand-color">Specialty Coffee</h5>
+              <p class="card-text">Double Espresso beans roasted locally, brewed to highlight flavors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title brand-color">Fresh Pastries</h5>
+              <p class="card-text">Baked daily croissants, muffins, and Strawberry tarts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title brand-color">Cozy Space</h5>
+              <p class="card-text">Comfortable seating, fast Wi‑Fi, and friendly baristas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 mb-0">Menu Highlights</h2>
+        <div>
+          <button class="btn btn-sm btn-outline-secondary me-2" onclick="filterMenu('all')">All</button>
+          <button class="btn btn-sm btn-outline-secondary me-2" onclick="filterMenu('coffee')">Coffee</button>
+          <button class="btn btn-sm btn-outline-secondary me-2" onclick="filterMenu('pastry')">Pastries</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="menuGrid">
+        <div class="col-md-6 col-lg-4 menu-item" data-type="coffee">
+          <div class="card h-100 shadow-sm">
+            <img src="image/doubleespresso.jpg" class="card-img-top" alt="espresso">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Double Espresso</h5>
+              <p class="card-text text-muted">Rich and concentrated — perfect pick-me-up.</p>
+             <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="menu-price">₱120</div>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-item="Double Espresso" data-price="120">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 menu-item" data-type="coffee">
+          <div class="card h-100 shadow-sm">
+            <img src="image/caffelatte.jpg" class="card-img-top" alt="latte">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Caffe Latte</h5>
+              <p class="card-text text-muted">Silky steamed milk with a smooth espresso base.</p>
+             <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="menu-price">₱150</div>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-item="Caffè Latte" data-price="150">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 menu-item" data-type="pastry">
+          <div class="card h-100 shadow-sm">
+            <img src="image/ButterCroissant.jpg" class="card-img-top" alt="croissant">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Butter Croissant</h5>
+              <p class="card-text text-muted">Flaky, buttery, baked every morning.</p>
+             <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="menu-price">₱80</div>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-item="Butter Croissant" data-price="80">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 menu-item" data-type="pastry">
+          <div class="card h-100 shadow-sm">
+            <img src="image/BlueberryMuffin.jpg" class="card-img-top" alt="muffin">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Blueberry Muffin</h5>
+              <p class="card-text text-muted">Soft inside, crisp top bursts of berry.</p>
+             <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="menu-price">₱95</div>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-item="Blueberry Muffin" data-price="95">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 menu-item" data-type="coffee">
+          <div class="card h-100 shadow-sm">
+            <img src="image/hot chocolate.jpg" class="card-img-top" alt="hot chocolate">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Hot Chocolate</h5>
+              <p class="card-text text-muted">A rich and creamy chocolate drink made with smooth cocoa and fresh milk. Perfect for warm, cozy moments.</p>
+             <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="menu-price">₱180</div>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-item="Pour-over (Single Origin)" data-price="180">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 menu-item" data-type="pastry">
+          <div class="card h-100 shadow-sm">
+            <img src="image/Strawberrytarts.jpg" class="card-img-top" alt="tart">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Strawberry tarts with custard</h5>
+              <p class="card-text text-muted">Buttery tart filled with creamy custard and topped with fresh strawberries.</p>
+             <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="menu-price">₱140</div>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-item="Seasonal Tart" data-price="140">Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="orderModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add to Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="orderForm" class="needs-validation" novalidate>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Item</label>
+              <input type="text" class="form-control" id="orderItem" readonly>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-6">
+                <label class="form-label">Price</label>
+                <input type="text" class="form-control" id="orderPrice" readonly>
+              </div>
+              <div class="col-6">
+                <label class="form-label">Qty</label>
+                <input type="number" class="form-control" id="orderQty" value="1" min="1">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Notes (optional)</label>
+              <textarea class="form-control" id="orderNotes" rows="2"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h3 class="brand-color">Our Story</h3>
+          <p class="text-muted">Bright Coffee started as a small corner stall with a mission: make great coffee approachable. We source beans from partner farms, roast thoughtfully, and craft every cup with care.</p>
+          <ul>
+            <li>Locally roasted beans</li>
+            <li>Eco-friendly packaging</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img src="image/Logo.jpg" alt="shop" class="img-fluid rounded-3 shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h4 class="brand-color">Visit Us</h4>
+          <p class="text-muted">123 Coffee Lane, Manila<br>Mon–Sat 9:00 AM–10:00 PM</p>
+
+          <h5 class="mt-4">Get in touch</h5>
+          <p class="mb-1">Phone: (+63) 131-123-1224</p>
+          <p>Email: brightcoffee@brightcoffee.example</p>
+
+          <div class="mt-3">
+            <a href="#" class="btn btn-outline-dark btn-sm me-2">Facebook</a>
+            <a href="#" class="btn btn-outline-dark btn-sm">Instagram</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <form class="p-4 bg-white rounded-3 shadow-sm">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" required></textarea>
+            </div>
+            <button class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 bg-dark text-white">
+  <div class="container d-flex justify-content-center align-items-center flex-column text-center">
+    <strong>Bright Coffee</strong>
+    <div>
+      <small>© <span id="year"></span> Bright Coffee — All rights reserved</small>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function filterMenu(type) {
+  var items = document.querySelectorAll('.menu-item');
+  items.forEach(function (item) {
+    if (type === 'all' || item.dataset.type === type) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+ <script defer src="bootstrap.bundle.js"></script>
+</body>
+</html>
